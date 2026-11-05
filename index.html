@@ -1,0 +1,249 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create & Sell Ebooks with Claude · Nextebooks</title>
+<meta name="description" content="A 44-step field guide with copy-and-paste prompts to write, publish and sell your first ebook with Claude. Instant PDF, $19.">
+<meta property="og:title" content="Create & Sell Ebooks with Claude">
+<meta property="og:description" content="44 steps and every prompt, from first idea to first sale. Instant PDF, $19.">
+<meta property="og:image" content="img/cover.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: one narrow column, purple hero, white body, sticky mobile buy bar. Palette = the book cover. */
+:root{--purple:#2A1866;--violet:#5B34C8;--deep:#160C3A;--sun:#F9C948;--blue:#1877E8;--ink:#14213D;--muted:#5B6478;--cream:#FFF8EE;--line:#E6E3F2;
+--display:"Fraunces",Georgia,serif;--body:"Inter",system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);color:var(--ink);background:#fff;line-height:1.55;font-size:17px}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance}
+h2{font-size:clamp(28px,4.2vw,40px);font-weight:800}
+h3{font-size:22px;font-weight:700}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--violet)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--sun);color:var(--purple);font-weight:800;font-size:18px;border-radius:999px;padding:16px 30px;text-decoration:none;box-shadow:0 10px 30px rgba(249,201,72,.35);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn b{background:var(--purple);color:#fff;border-radius:999px;padding:4px 12px;font-size:16px}
+.small{font-size:14px;color:var(--muted)}
+/* hero */
+.hero{background:radial-gradient(circle at 80% 10%,#5B34C8 0%,#2A1866 45%,#160C3A 100%);color:#fff;padding-block:56px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero .eyebrow{color:var(--sun)}
+.hero h1{font-size:clamp(38px,6vw,66px);font-weight:800;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--sun)}
+.hero p.lead{font-size:20px;color:#D9D4F5;max-width:34em;margin:22px 0 0}
+.hero .cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.hero .small{color:#BDB6E6}
+.cover{justify-self:center;width:min(360px,80%);transform:perspective(1600px) rotateY(-14deg) rotateX(3deg);border-radius:6px 14px 14px 6px;box-shadow:30px 40px 80px rgba(0,0,0,.55)}
+.trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font-size:14px;color:#D9D4F5;font-weight:600}
+.trust span:before{content:"✓";color:var(--sun);margin-right:8px;font-weight:800}
+/* sections */
+section{padding-block:64px}
+section.alt{background:var(--cream)}
+.sec-head{max-width:40em;margin-bottom:34px}
+.sec-head p{color:var(--muted);margin:12px 0 0;font-size:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.card .x{width:40px;height:40px;border-radius:50%;background:#FDE8E6;color:#C8382B;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px}
+.card p{margin:8px 0 0;color:var(--muted);font-size:16px}
+.parts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;counter-reset:part}
+.part{display:flex;gap:18px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.part .n{flex:none;width:44px;height:44px;border-radius:12px;background:var(--violet);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:20px}
+.part h3{font-size:19px}
+.part p{margin:6px 0 0;color:var(--muted);font-size:15px}
+.part .steps{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);margin-top:8px}
+.pages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pages figure{margin:0}
+.pages img{border-radius:8px;box-shadow:0 14px 34px rgba(20,33,61,.18);border:1px solid var(--line)}
+.pages figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.prompt{background:#fff;border-left:6px solid var(--blue);border-radius:14px;padding:24px 28px;box-shadow:0 12px 30px rgba(20,33,61,.08);font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.6;max-width:46em}
+.prompt .tag{font-family:var(--body);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.prompt mark{background:#FFF0D6;color:#9A5A00;border-radius:4px;padding:0 4px;font-family:var(--body);font-size:15px;font-weight:700}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.who ul{margin:12px 0 0;padding-left:20px}
+.who li{margin:8px 0}
+/* offer */
+.offer{background:radial-gradient(circle at 20% 0%,#5B34C8 0%,#2A1866 50%,#160C3A 100%);color:#fff}
+.offer .box{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
+.offer ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
+.offer li:before{content:"✓";color:var(--sun);font-weight:800;margin-right:10px}
+.price{display:flex;align-items:baseline;gap:14px;margin-top:26px}
+.price .now{font-family:var(--display);font-weight:800;font-size:64px;color:var(--sun);line-height:1}
+.price .was{color:#BDB6E6;font-size:18px}
+.guarantee{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.08);border-radius:14px;padding:18px 20px;margin-top:26px;font-size:15px;color:#D9D4F5}
+.guarantee b{color:#fff}
+.faq details{border-top:1px solid var(--line);padding:16px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary:after{content:"+";color:var(--violet);font-weight:800}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:10px 0 0;color:var(--muted)}
+.series{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.series img{border-radius:8px;box-shadow:0 12px 30px rgba(20,33,61,.18)}
+.series p{font-size:14px;color:var(--muted);margin:10px 0 0}
+footer{background:var(--deep);color:#BDB6E6;font-size:13px;padding-block:34px calc(34px + 72px)}
+footer .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;font-size:18px;margin-bottom:14px}
+footer .brand img{width:40px}
+footer .brand span{color:#2AA4F4}
+footer p{margin:6px 0;max-width:70em}
+/* sticky buy bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(20,33,61,.12);padding:10px max(20px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px))}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.bar .t{font-weight:700;font-size:15px}
+.bar .t small{display:block;color:var(--muted);font-weight:600;font-size:13px}
+.bar .btn{padding:12px 22px;font-size:16px;box-shadow:none}
+@media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr}.hero{padding-block:40px 48px}.cover{order:-1;width:min(240px,70%);transform:none}
+ .grid3,.parts,.pages,.who,.series{grid-template-columns:1fr}.pages{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+ .offer .box{grid-template-columns:1fr}.offer img{width:min(220px,60%);margin:0 auto}
+ section{padding-block:48px}.bar .t{display:none}.bar .wrap{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}html{scroll-behavior:auto}}
+</style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2398440304230872');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Create & Sell Ebooks with Claude',value:19,currency:'USD'});
+document.addEventListener('click',function(e){var a=e.target.closest('a[href*="pay.kiwify.com"]');if(a){fbq('track','AddToCart',{value:19,currency:'USD'});}});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2398440304230872&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap">
+  <div>
+   <div class="eyebrow">The Practical Field Guide Series · No. 4</div>
+   <h1>Write, publish and <em>sell your first ebook</em> with Claude. In order. Step by step.</h1>
+   <p class="lead">A 44-step field guide with a copy-and-paste prompt for every step, from an idea people already search for to a published book on Amazon, your own checkout, and your first readers.</p>
+   <div class="cta"><a class="btn" href="https://pay.kiwify.com/YYOEe47">Get the guide <b>$19</b></a><span class="small">Instant PDF download · One-time payment · Card or Apple&nbsp;Pay</span></div>
+   <div class="trust"><span>44 steps, 161 pages</span><span>Every prompt included</span><span>Amazon KDP + your own store</span><span>Written with the method it teaches</span></div>
+  </div>
+  <img class="cover" src="img/cover.jpg" alt="Cover of Create & Sell Ebooks with Claude">
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Sound familiar?</div><h2>You've had an ebook idea for years. It's still an idea.</h2><p>Not because you can't write. Because everything after the writing feels endless.</p></div>
+  <div class="grid3">
+   <div class="card"><div class="x">✕</div><h3>"Where do I even start?"</h3><p>A blank page, a vague topic, and no way to know if anyone would pay for it.</p></div>
+   <div class="card"><div class="x">✕</div><h3>"Formatting and covers scare me."</h3><p>Kindle files, print PDFs, trim sizes, spine widths. It sounds like a job for a designer.</p></div>
+   <div class="card"><div class="x">✕</div><h3>"Even if I publish, who will buy it?"</h3><p>Uploading to Amazon isn't a launch. Without a store, a page, and a plan, books sit at zero.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="alt">
+ <div class="wrap">
+  <div class="sec-head"><div class="eyebrow">What's inside</div><h2>Eight parts. 44 steps. One prompt per step.</h2><p>You bring the knowledge and the decisions. Claude does the heavy lifting. Each step tells you why it matters, what to have ready, the exact prompt to paste, follow-up prompts, a worked example, and what to do next.</p></div>
+  <div class="parts">
+   <div class="part"><div class="n">1</div><div><h3>Start Here</h3><p>Set up your workspace, let Claude work in your browser, and learn the rules that keep your account safe.</p></div></div>
+   <div class="part"><div class="n">2</div><div><h3>Find a Book Worth Buying</h3><p>Mine your own knowledge, validate demand on Amazon, learn from competitors' reviews, pick a title that sells.</p><div class="steps">Steps 1–6</div></div></div>
+   <div class="part"><div class="n">3</div><div><h3>Plan and Write</h3><p>An outline that prevents repetition, a style guide Claude follows, chapter drafts in your voice, fact-checks, human edits.</p><div class="steps">Steps 7–14</div></div></div>
+   <div class="part"><div class="n">4</div><div><h3>Design and Format</h3><p>Print-ready PDF, Kindle EPUB, cover concept, Kindle and full paperback covers, proofing every file.</p><div class="steps">Steps 15–22</div></div></div>
+   <div class="part"><div class="n">5</div><div><h3>Publish on Amazon KDP</h3><p>A description that sells, keywords and categories, pricing and royalties, and how to answer KDP's questions correctly.</p><div class="steps">Steps 23–26</div></div></div>
+   <div class="part"><div class="n">6</div><div><h3>Sell on Your Own Store</h3><p>Pick a platform, build the checkout, write a sales page that converts, price in dollars, set up delivery, support and affiliates.</p><div class="steps">Steps 27–31</div></div></div>
+   <div class="part"><div class="n">7</div><div><h3>Launch on Instagram and Facebook</h3><p>Brand kit, accounts, a 14-day launch calendar, posts, carousels and Reel scripts, honest reviews and a reader list.</p><div class="steps">Steps 32–36</div></div></div>
+   <div class="part"><div class="n">8</div><div><h3>Paid Traffic and Revenue</h3><p>Google Analytics and UTM links, pixels, your first Meta campaign, Google and Amazon ads, reading your numbers, and turning it all into a repeatable system.</p><div class="steps">Steps 37–44</div></div></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Look inside</div><h2>Real pages, not a slide deck.</h2></div>
+  <div class="pages">
+   <figure><img src="img/p1.jpg" alt="Part opener page: Find a Book Worth Buying"><figcaption>Each part opens with its steps and the outcome you'll have.</figcaption></figure>
+   <figure><img src="img/p2.jpg" alt="A step page with the prompt box"><figcaption>Each step: why it matters, what to have ready, the prompt, follow-ups, an example.</figcaption></figure>
+   <figure><img src="img/p3.jpg" alt="Part opener page: Plan and Write"><figcaption>Action sheets to record what you did and where you saved it.</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="alt">
+ <div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Try step 1 for free</div><h2>Don't know what your ebook should be about? Ask Claude this.</h2></div>
+  <div class="prompt"><div class="tag">Copy and paste into Claude</div>Act as a nonfiction publishing strategist. My background: <mark>[YOUR JOBS, SKILLS, HOBBIES, QUESTIONS PEOPLE ASK YOU]</mark>. Interview me with 8 questions, one at a time. Then propose 12 ebook ideas, each with the specific reader, the problem it solves, and why I am credible to write it. Rank them by how specific the reader is and how urgent the problem is.</div>
+  <p class="small" style="margin-top:16px">That's step 1 of 44. Step 2 shows you how to check real demand on Amazon before you write a single chapter.</p>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Is it for you?</div><h2>Made for first-time authors who want a finished book, not a hobby.</h2></div>
+  <div class="who">
+   <div class="card"><h3>This guide is for you if…</h3><ul><li>You know something people ask you about, and you'd like it in a book.</li><li>You've started an ebook before and stalled on formatting, covers or "what now".</li><li>You want to sell on Amazon <em>and</em> from your own checkout, in dollars.</li><li>You can follow steps in order and use Claude (free or paid plan).</li></ul></div>
+   <div class="card"><h3>It's not for you if…</h3><ul><li>You want a "paste one prompt, get a bestseller" button. Readers spot that, and so does Amazon.</li><li>You're looking for promises of income. This is a process, not a guarantee.</li><li>You already run a publishing business with a team. You'll know most of this.</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="offer" id="buy">
+ <div class="wrap">
+  <div class="box">
+   <img src="img/cover.jpg" alt="Create & Sell Ebooks with Claude cover" style="border-radius:6px 14px 14px 6px;box-shadow:0 30px 70px rgba(0,0,0,.5)">
+   <div>
+    <div class="eyebrow" style="color:var(--sun)">Get the guide</div>
+    <h2>Create &amp; Sell Ebooks with Claude</h2>
+    <ul>
+     <li>161-page PDF, readable on any device</li>
+     <li>44 steps with a detailed copy-and-paste prompt each</li>
+     <li>Templates: project instructions, style guide, launch calendar, ad plan</li>
+     <li>A running case study from idea to first sales</li>
+     <li>Free updates when platforms change their rules</li>
+    </ul>
+    <div class="price"><span class="now">$19</span><span class="was">one-time · launch price</span></div>
+    <div style="margin-top:22px"><a class="btn" href="https://pay.kiwify.com/YYOEe47">Buy now, download instantly <b>$19</b></a></div>
+    <div class="guarantee"><span style="font-size:26px">🛡️</span><div><b>7-day money-back guarantee.</b> Read it. If it isn't what you expected, reply to your receipt email within 7 days and you get a full refund.</div></div>
+    <p class="small" style="color:#BDB6E6;margin-top:14px">Secure checkout by Kiwify. Card and Apple Pay. Prices in US dollars; your bank may show the converted amount.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="faq">
+ <div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Questions</div><h2>Before you buy</h2></div>
+  <details><summary>Do I need a paid Claude plan?</summary><p>No. Every prompt runs on the free plan. A paid plan helps with longer manuscripts because it allows more messages and bigger files, and the Claude in Chrome chapter needs a plan that includes it.</p></details>
+  <details><summary>I've never published anything. Is it too technical?</summary><p>No design or coding skills are needed. Claude produces the files; the guide shows you how to check them. Where a platform has a form to fill in, the step shows you what to type.</p></details>
+  <details><summary>Does Amazon allow books written with AI?</summary><p>Yes, with disclosure. Part 1 explains the rules and step 26 shows exactly how to answer KDP's AI-content questions. The guide also teaches you to audit repetition and invented claims so your book is one readers finish.</p></details>
+  <details><summary>Will I make money?</summary><p>The guide gives you the process and the numbers to track; it doesn't promise sales. The examples in the case study are illustrations. Your results depend on your topic, your effort and your market.</p></details>
+  <details><summary>How do I get the file?</summary><p>Right after payment, Kiwify emails you a link to your members area, where you download the PDF. You can come back for updates any time.</p></details>
+  <details><summary>Can I get a refund?</summary><p>Yes. Reply to your receipt email within 7 days of purchase and you'll get a full refund.</p></details>
+ </div>
+</section>
+
+<section class="alt">
+ <div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Coming soon in the series</div><h2>More practical field guides from Nextebooks</h2></div>
+  <div class="series">
+   <div><img src="img/100-prompts-work.jpg" alt="100 AI Prompts to Make Your Work Easier (coming soon)"><p>100 AI Prompts to Make Your Work Easier</p></div>
+   <div><img src="img/50-prompts-small-business.jpg" alt="50 AI Prompts to Grow Your Small Business (coming soon)"><p>50 AI Prompts to Grow Your Small Business</p></div>
+   <div><img src="img/30-day-money-reset.jpg" alt="The 30-Day Money Reset (coming soon)"><p>The 30-Day Money Reset</p></div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div class="brand"><img src="img/logo.png" alt="Nextebooks logo">Next<span>ebooks</span> · Knowledge for what's next</div>
+  <p>Claude is a trademark of Anthropic. Amazon, Kindle and KDP are trademarks of Amazon.com, Inc. Instagram and Facebook are trademarks of Meta Platforms, Inc. This is an independent publication, not affiliated with or endorsed by Anthropic, Amazon or Meta.</p>
+  <p>This guide provides general education only, not legal, tax or financial advice. Examples are illustrations, not promises of sales or income. Written and produced with the help of AI, using the workflow it describes, and reviewed by the publisher.</p>
+  <p>Support: reply to your receipt email or write to the address on your Kiwify receipt. · Follow <a href="https://www.instagram.com/nextebooks/" style="color:#fff">@nextebooks</a></p>
+ </div>
+</footer>
+
+<div class="bar"><div class="wrap"><div class="t">Create &amp; Sell Ebooks with Claude<small>44 steps · instant PDF · 7-day guarantee</small></div><a class="btn" href="https://pay.kiwify.com/YYOEe47">Get the guide · $19</a></div></div>
+<script>
+(function(){var q=location.search;if(!q)return;document.querySelectorAll('a[href*="pay.kiwify.com"]').forEach(function(a){a.href+= (a.href.indexOf('?')>-1?'&':'?')+q.slice(1);});})();
+</script>
+</body>
+</html>
+
+</body></html>
